@@ -1,43 +1,10 @@
-/*
- * WAVE file info reader.
- *
- * Compile:
- * $ cc -o wav_info wav_info.c
- *
- * Usage:
- * $ ./wav_info <file>
- *
- * Examples:
- * $ ./wav_info /path/to/file.wav
- *
- * Copyright (C) 2010 Alessandro Ghedini <alessandro@ghedini.me>
- * --------------------------------------------------------------
- * "THE BEER-WARE LICENSE" (Revision 42):
- * Alessandro Ghedini wrote this file. As long as you retain this
- * notice you can do whatever you want with this stuff. If we
- * meet some day, and you think this stuff is worth it, you can
- * buy me a beer in return.
- * --------------------------------------------------------------
- */
-
+/**
+ copyright aerror  2016
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// struct wav_header{
-// 	char	id[4];			/* must be "RIFF" */
-// 	int	size;			/* file size - 8 */
-// 	char	fmt[8];			/* must be "WAVEfmt " */
-// 	int	format;
-// 	short	pcm;            	/* 1 if PCM */
-// 	short	channels;	
-// 	int	frequency;	
-// 	int	bytes_per_second;
-// 	short	bytes_by_capture;
-// 	short	bits_per_sample;
-// 	char	data[4];
-// 	int	bytes_in_data;
-// };
 #pragma pack(push, 1)
 struct CHUNK
 {
@@ -75,7 +42,7 @@ int main(int argc, char **argv) {
 	struct WAVE_FILE_HEADER header;
 
 	if (argc < 2) {
-		printf("Usage: %s <file>\n", argv[0]);
+		printf("Usage: %s <file> ...\n", argv[0]);
 		return -1;
 	}
 	
