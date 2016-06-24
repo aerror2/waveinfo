@@ -1,1 +1,1 @@
-get wave info in any platorm , in command line 
+command line tools that simple gets wave file info in any platform 
